@@ -35,6 +35,7 @@ for x in range (0,len(plainText)):
     s[j]=temp
     kStream.append(s[(s[i]+s[j])%len(s)])
 
+
 print("S array after creating keyStream:",s)
 print("Key Stream:",kStream)
 
