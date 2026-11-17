@@ -1,5 +1,7 @@
 
 
+
+
 s=[0,1,2,3,4,5,6,7,8]
 key=[4,7,2]
 t=[]
@@ -47,6 +49,18 @@ print()
 print("Plain Text:",plainText)
 print("Final cipher text:",cipherText)
 
-    
+
+
+
+print()
+print("Decrypting the cipher to get the plaitext again:")
+
+plainAgain=[]
+for i in range(0,len(cipherText)):
+    plainAgain.append(cipherText[i]^kStream[i])
+
+print()
+print("Original PlainText decrypted back:",plainAgain)
+print()
 
 
