@@ -111,7 +111,7 @@ caeser_key = int(input("Enter Caesar key: "))
 
 caesar_ciphertext = encrypt_caesar(caeser_plaintext, caeser_key)
 print("Caesar Cipher:", caesar_ciphertext)
-print(\n)
+
 print("Vigenere PlainText:",caesar_ciphertext)
 vigenere_plaintext = caesar_ciphertext
 vigenere_key = input("Enter Vigenere keyword: ")
@@ -121,7 +121,7 @@ vigenere_ciphertext = encrypt_vigenere(
 )
 print("Vigenere Cipher:", vigenere_ciphertext)
 
-print(\n)
+
 print("Auto PlainText:",vigenere_ciphertext)
 auto_plaintext = vigenere_ciphertext
 auto_key = input("Enter initial Autokey keyword: ")
@@ -132,7 +132,7 @@ auto_ciphertext, keystream = encrypt_autokey(
 print("Autokey Cipher:", auto_ciphertext)
 print("Generated Key Stream:", keystream)
 
-print(\n,\n)
+
 auto_decrypted = decrypt_autokey(auto_ciphertext, auto_key)
 print("Autokey Decrypted:", auto_decrypted)
 
@@ -145,3 +145,52 @@ caesar_decrypted = decrypt_caesar(
     vigenere_decrypted, caeser_key
 )
 print("Caesar Decrypted:", caesar_decrypted)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# practicing all the three ciphers
+
+
+def encryptCeasar(plaintext,key):
+
+    p=plaintext.upper()
+    key=key.upper()
+    keyIndex=0
+    alphabets="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    cipherText=""
+    for i in range(len(plaintext)):
+        if i.isalpha():
+            old=alphabets.index(i)
+            new =key[keyIndex %len(key)]
+            cipherText= cipherText+(alphabets(old+new)%26)
+        else:
+            cipherText=cipherText+i
+    return cipherText
+
+def decryptCeasar(plainText,key):
+    return encryptCeasar(plainText,key)
+
+
+
+
